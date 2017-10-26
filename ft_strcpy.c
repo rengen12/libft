@@ -1,19 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amichak <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/26 15:33:51 by amichak           #+#    #+#             */
+/*   Updated: 2017/10/26 15:34:40 by amichak          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
-//dopilit`
+
 char	*ft_strcpy(char *dest, const char *src)
 {
-    char	*r;
     int		i;
 
     i = 0;
-    if (!(r = (char *)malloc(sizeof(*r) * (ft_strlen(s) + 1))))
-        return (NULL);
     while (src[i])
     {
-        r[i] = s[i];
+        dest[i] = src[i];
         i++;
     }
-    r[i] = '\0';
-    return (r);
+    if (!dest[i])
+        dest[i] = '\0';
+    return (dest);
 }

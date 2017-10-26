@@ -10,11 +10,11 @@
 		ft_memcmp.c
 .		ft_strlen.c
 .		ft_strdup.c
-		ft_strcpy.c
-		ft_strncpy.c
-		ft_strcat.c
-		ft_strncat.c
-		ft_strlcat.c
+.		ft_strcpy.c
+.		ft_strncpy.c
+.		ft_strcat.c
+.		ft_strncat.c
+.		ft_strlcat.c
 		ft_strchr.c
 		ft_strrchr.c
 		ft_strstr.c
@@ -50,10 +50,10 @@
 .		ft_putstr.c
 .		ft_putendl.c
 .		ft_putnbr.c
-		ft_putchar_fd.c
-		ft_putstr_fd.c
-		ft_putendl_fd.c
-		ft_putnbr_fd.c
+.		ft_putchar_fd.c
+.		ft_putstr_fd.c
+.		ft_putendl_fd.c
+.		ft_putnbr_fd.c
 		
 		libft.h
 		ft_lstnew.c
@@ -65,3 +65,23 @@
 
 		#include "libft.h"
 
+
+
+int		main(void)
+{
+	char a[41];
+	char b[6];
+
+	a[0] = 'a';
+	a[1] = 'a';
+	a[2] = 'a';
+	a[3] = '\0';
+	b[0] = 'b';
+	b[1] = 'b';	
+	b[2] = 'b';	
+	b[3] = '\0';
+
+	strncat(a, b, 1);
+	ft_putstr(a);
+
+}
