@@ -19,6 +19,9 @@
 void 	ft_putstr(char const *s);
 void	ft_putchar(char c);
 size_t	ft_strlen(const char *s);
+char	*ft_strchr(const char *s, int c);
+char    *ft_strrchr(const char *s, int c);
+char    *ft_strstr(const char *haystack, const char *needle);
 
 
 

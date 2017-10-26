@@ -14,32 +14,13 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (1)
+	while (*s)
 	{
-		if (*s != c)
-		{
-			s++;
-		}
-
+		if (*s == c)
+			return ((char *)s);
+		s++;
 	}
-	return ((char *)s);
-}
-
-int		main(void)
-{
-	char a[41];
-	//char *r;
-
-	a[0] = 'a';
-	a[1] = 'b';
-	a[2] = 'c';
-	a[3] = '\0';
-	a[4] = 'z';
-
-	//r = ;
-	ft_putstr(strchr(a, 'z'));
-	//write(1, "\n", 1);
-	//write(1, r, 3);
-	//write(1, r, 3);
-	//write(1, r, 3);
+	if (*s == c)
+		return ((char *)s);
+	return (NULL);
 }
