@@ -8,7 +8,7 @@ char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
     r = NULL;
     if (s && f)
     {
-        if (!(r = (char *)ft_memalloc(ft_strlen(s))))
+        if (!(r = ft_strnew(ft_strlen(s))))
             return (NULL);
         ft_strcpy(r, s);
         i = 0;

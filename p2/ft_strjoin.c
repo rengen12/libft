@@ -5,7 +5,7 @@ char    *ft_strjoin(char const *s1, char const *s2)
     char            *r;
     unsigned int    i;
 
-    if (!(r = (char *)ft_memalloc(ft_strlen(s1) + ft_strlen(s2))))
+    if (!(r = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
         return (NULL);
     i = 0;
     while (*s1)

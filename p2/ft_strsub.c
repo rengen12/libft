@@ -4,7 +4,7 @@ char    *ft_strsub(char const *s, unsigned int start, size_t len)
 {
     char    *r;
 
-    if(!(r = (char *)ft_memalloc(len)))
+    if(!(r = ft_strnew(len)))
         return (NULL);
     while (len--)
         r[i++] = s[start++];
