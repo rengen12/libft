@@ -25,6 +25,9 @@ char    *ft_strstr(const char *haystack, const char *needle);
 void    *ft_memset(void *s, int c, size_t n);
 void    *ft_memmove(void *dest, const void *src, size_t n);
 void    *ft_memchr(const void *s, int c, size_t n);
+void    ft_strdel(char **as);
+char    *ft_strsub(char const *s, unsigned int start, size_t len);
+char    *ft_strnew(size_t size);
 
 
 
