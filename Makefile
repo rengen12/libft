@@ -6,16 +6,13 @@
 #    By: amichak <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/30 12:19:38 by amichak           #+#    #+#              #
-#    Updated: 2017/10/30 17:57:43 by amichak          ###   ########.fr        #
+#    Updated: 2017/10/30 19:19:59 by amichak          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Wconversion
+CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
-PATH_INC = .
-PATH_OBJ = ./obj
-PATH_SRC = ./srcs
 SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	  ft_memchr.c ft_memcmp.c ft_strlen.c ft_strdup.c ft_strcpy.c \
 	  ft_strncpy.c ft_strcat.c ft_strncat.c ft_strlcat.c ft_strchr.c \
@@ -29,27 +26,24 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	  ft_putendl_fd.c ft_putnbr_fd.c ft_lstnew.c ft_lstdelone.c ft_lstdel.c \
 	  ft_lstadd.c ft_lstiter.c ft_lstmap.c
 
-OBJ = $(patsubst %.c, $(PATH_OBJ)/%.o, $(SRC))
+OBJ = $(patsubst %.c, %.o, $(SRC))
 
 .PHONY: 			all clean fclean re
 
 all:				$(NAME)
 
-$(NAME):			$(OBJ)
+$(NAME):
+	@$(CC) $(CFLAGS) -c $(SRC) -I ./libft.h
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
-	@echo "libft : done !"
-
-$(PATH_OBJ)/%.o:	$(addprefix $(PATH_SRC)/, %.c)
-	@mkdir -p $(PATH_OBJ)
-	@$(CC) $(CFLAGS) -o $@ -c $^ -I $(PATH_INC)
-
+	@echo "libft: done!"
+	
 clean:
-	@rm -f $(OBJ)
-	@echo "Libft : objects removed"
+	@rm -rf $(OBJ) 
+	@echo "Libft: objects removed"
 
 fclean:				clean
 	@rm -f $(NAME)
-	@echo "Libft : binary removed"
+	@echo "Libft: binary removed"
 
 re:					fclean all

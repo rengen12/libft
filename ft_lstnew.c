@@ -20,14 +20,14 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 		return (NULL);
 	if (!content)
 	{
-		n->content = content;
-		n->size = 0;
+		ft_memcpy(n->content , content, sizeof(content));
+		n->content_size = 0;
 	}
 	else
 	{
 		if (!(n->content = malloc(sizeof(content))))
 			return (NULL);
-		ft_memcpy((n->content = content), content, sizeof(content));
+		ft_memcpy(n->content , content, sizeof(content));
 		n->content_size = content_size;
 	}
 	n->next = NULL;
