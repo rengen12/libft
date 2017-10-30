@@ -18,11 +18,11 @@ char	*strncpy(char *dest, const char *src, size_t n)
 
 	i = 0;
 	while (src[i] && i < n)
-    {
-        dest[i] = src[i];
-        i++;
-    }
-    if (!dest[i])
-        dest[i] = '\0';
-    return (dest);
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	if (!dest[i])
+		dest[i] = '\0';
+	return (dest);
 }
