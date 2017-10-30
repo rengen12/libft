@@ -4,10 +4,10 @@ void    *ft_memcpy(void *dest, const void *src, size_t n)
 {
     unsigned char      *cr;
 
-    if (n == 0 || dest == src)
+    if (dest == src)
         return (dest);
-    cr = (char *)dest;
+    cr = (unsigned char *)dest;
     while (n--)
-        *cr++ = *((char *)src++);
+        *cr++ = *((const unsigned char *)src++);
     return (dest);
 }
