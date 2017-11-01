@@ -6,12 +6,12 @@
 #    By: amichak <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/30 12:19:38 by amichak           #+#    #+#              #
-#    Updated: 2017/10/30 19:19:59 by amichak          ###   ########.fr        #
+#    Updated: 2017/11/01 16:28:24 by amichak          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -Wconversion
 NAME = libft.a
 SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	  ft_memchr.c ft_memcmp.c ft_strlen.c ft_strdup.c ft_strcpy.c \
@@ -34,7 +34,7 @@ all:				$(NAME)
 
 $(NAME):
 	@$(CC) $(CFLAGS) -c $(SRC) -I ./libft.h
-	@ar rc $(NAME) $(OBJ)
+	@ar rcs $(NAME) $(OBJ)
 	@ranlib $(NAME)
 	@echo "libft: done!"
 	

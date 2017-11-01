@@ -18,12 +18,12 @@ char	*ft_strtrim(char const *s)
 
 	if (!s)
 		return (NULL);
-	while (*s == ' ' || *s == '\n' || *s == '\t')
+	while ((*s == ' ' || *s == '\n' || *s == '\t') && *s)
 		s++;
 	if (!*s)
 		return (ft_strnew(0));
 	send = (char *)(s + ft_strlen(s) - 1);
 	while (*send == ' ' || *send == '\n' || *send == '\t')
 		send--;
-	return (ft_strsub(s, 0, send - s + 1));
+	return (ft_strsub(s, 0, (size_t)(send - s + 1)));
 }

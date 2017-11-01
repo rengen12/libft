@@ -52,7 +52,7 @@ char			**ft_strsplit(char const *s, char c)
 
 	r = NULL;
 	i = 0;
-	qw = qwords(s, c);
+	qw = s ? qwords(s, c) : 0;
 	if (!s || !(r = (char **)malloc(sizeof(char *) * (qw + 1))))
 		return (NULL);
 	while (i < qw && *s)
@@ -60,7 +60,7 @@ char			**ft_strsplit(char const *s, char c)
 		while (*s == c && *s)
 			s++;
 		nx_ch = ft_strchr(s, c);
-		my_len = (nx_ch != NULL) ? (nx_ch - s) : ft_strlen(s);
+		my_len = (nx_ch != NULL) ? (size_t)(nx_ch - s) : ft_strlen(s);
 		if (!(r[i] = ft_strsub(s, 0, my_len)))
 			return (fr_all(&r[0], i));
 		while (*s != c && *s)

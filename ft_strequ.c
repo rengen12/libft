@@ -22,6 +22,6 @@ int		ft_strequ(const char *s1, const char *s2)
 		s2++;
 	}
 	if (*s1 == '\0' && *s2 == '\0')
-			return (1);
+		return (1);
 	return (0);
 }
