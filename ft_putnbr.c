@@ -14,17 +14,15 @@
 
 void	ft_putnbr(int n)
 {
-	if (n == -2147483648)
-	{
-		ft_putnbr(-214748364);
-		ft_putnbr(8);
-	}
+	unsigned int	un;
+
+	un = (unsigned int)n;
 	if (n < 0)
 	{
 		ft_putchar('-');
-		n *= -1;
+		un = (unsigned int)-n;
 	}
-	if (n >= 10)
-		ft_putnbr(n / 10);
-	ft_putchar((char)((n % 10) + '0'));
+	if (un >= 10)
+		ft_putnbr(un / 10);
+	ft_putchar((char)((un % 10) + '0'));
 }

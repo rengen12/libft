@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_arrrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amichak <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/26 15:31:25 by amichak           #+#    #+#             */
-/*   Updated: 2017/10/26 15:31:29 by amichak          ###   ########.fr       */
+/*   Created: 2017/11/03 18:16:54 by amichak           #+#    #+#             */
+/*   Updated: 2017/11/03 18:16:56 by amichak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_arrrev(int *arr, size_t size)
 {
-	unsigned int	un;
+	int			*r;
+	size_t		i;
 
-	un = (unsigned int)n;
-	if (n < 0)
+	i = 0;
+	if (!arr || size <= 0)
+		return ;
+	if (!(r = (int *)malloc(sizeof(*arr) * size)))
+		return ;
+	while (i < size)
 	{
-		ft_putchar_fd('-', fd);
-		un = (unsigned int)-n;
+		r[i] = arr[i];
+		i++;
 	}
-	if (un >= 10)
-		ft_putnbr_fd(un / 10, fd);
-	ft_putchar_fd((char)(un % 10 + '0'), fd);
+	while (size--)
+		*arr++ = r[size];
+	free(r);
+	r = 0;
 }

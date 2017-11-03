@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_printhex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amichak <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/26 15:31:25 by amichak           #+#    #+#             */
-/*   Updated: 2017/10/26 15:31:29 by amichak          ###   ########.fr       */
+/*   Created: 2017/11/03 17:40:15 by amichak           #+#    #+#             */
+/*   Updated: 2017/11/03 17:40:17 by amichak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_printhex(unsigned int n)
 {
-	unsigned int	un;
-
-	un = (unsigned int)n;
-	if (n < 0)
+	if (n >= 16)
 	{
-		ft_putchar_fd('-', fd);
-		un = (unsigned int)-n;
+		ft_printhex(n / 16);
+		n %= 16;
 	}
-	if (un >= 10)
-		ft_putnbr_fd(un / 10, fd);
-	ft_putchar_fd((char)(un % 10 + '0'), fd);
+	ft_putchar("0123456789ABCDEF"[n]);
 }

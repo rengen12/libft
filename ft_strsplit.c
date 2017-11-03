@@ -36,7 +36,7 @@ static char		**fr_all(char **s, size_t index)
 	size_t	i;
 
 	i = 0;
-	while (i < index)
+	while (i < index && s[i])
 		ft_strdel(&s[i++]);
 	ft_strdel(s);
 	return (NULL);

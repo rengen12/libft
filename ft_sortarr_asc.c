@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_sortarr_asc.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amichak <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/26 15:31:25 by amichak           #+#    #+#             */
-/*   Updated: 2017/10/26 15:31:29 by amichak          ###   ########.fr       */
+/*   Created: 2017/11/02 16:34:03 by amichak           #+#    #+#             */
+/*   Updated: 2017/11/02 16:54:21 by amichak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int		*ft_sortarr_asc(int *arr, size_t size)
 {
-	unsigned int	un;
+	size_t	i;
+	int		f;
 
-	un = (unsigned int)n;
-	if (n < 0)
+	if (size == 0 || !arr)
+		return (NULL);
+	f = 1;
+	while (f)
 	{
-		ft_putchar_fd('-', fd);
-		un = (unsigned int)-n;
+		f = 0;
+		i = 0;
+		while (i < size - 1)
+			if (arr[i] > arr[i + 1])
+			{
+				ft_swap(&arr[i], &arr[i + 1]);
+				i++;
+				f = 1;
+			}
 	}
-	if (un >= 10)
-		ft_putnbr_fd(un / 10, fd);
-	ft_putchar_fd((char)(un % 10 + '0'), fd);
+	return (arr);
 }

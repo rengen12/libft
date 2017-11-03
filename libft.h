@@ -81,4 +81,17 @@ void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void			ft_print_strtab(char **tab);
+int				ft_arraymax(int *arr, size_t size);
+int				ft_arraymin(int *arr, size_t size);
+int				*ft_sortarr_asc(int *arr, size_t size);
+int				*ft_sortarr_desc(int *arr, size_t size);
+void			ft_swap(int *a, int *b);
+long long		ft_atoi_base(char *s, char *base);
+char			*ft_convert_base(char *nbr, char *base_from, char *base_to);
+void			ft_printhex(unsigned int n);
+void			ft_putnbr_base(int nbr, char *base);
+void			ft_div_mod(int a, int b, int *div, int *mod);
+int				ft_srch_arrelem(int *arr, int size, int elem);
+void			ft_arrrev(int *arr, size_t size);
 #endif

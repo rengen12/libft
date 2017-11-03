@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_srch_arrelem.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amichak <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/26 15:31:25 by amichak           #+#    #+#             */
-/*   Updated: 2017/10/26 15:31:29 by amichak          ###   ########.fr       */
+/*   Created: 2017/11/03 17:42:28 by amichak           #+#    #+#             */
+/*   Updated: 2017/11/03 17:42:31 by amichak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putnbr_fd(int n, int fd)
+int		ft_srch_arrelem(int *arr, int size, int elem)
 {
-	unsigned int	un;
+	int		i;
 
-	un = (unsigned int)n;
-	if (n < 0)
+	i = 0;
+	if (arr && elem >= 0)
 	{
-		ft_putchar_fd('-', fd);
-		un = (unsigned int)-n;
+		while (i < size)
+		{
+			if (arr[i] == elem)
+				return (i);
+			i++;
+		}
 	}
-	if (un >= 10)
-		ft_putnbr_fd(un / 10, fd);
-	ft_putchar_fd((char)(un % 10 + '0'), fd);
+	return (-1);
 }

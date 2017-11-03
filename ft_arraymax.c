@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_arraymax.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amichak <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/26 15:31:25 by amichak           #+#    #+#             */
-/*   Updated: 2017/10/26 15:31:29 by amichak          ###   ########.fr       */
+/*   Created: 2017/11/02 15:53:51 by amichak           #+#    #+#             */
+/*   Updated: 2017/11/02 16:28:32 by amichak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int		ft_arraymax(int *arr, size_t size)
 {
-	unsigned int	un;
+	int			max;
+	size_t		i;
 
-	un = (unsigned int)n;
-	if (n < 0)
+	if (size == 0 || !arr)
 	{
-		ft_putchar_fd('-', fd);
-		un = (unsigned int)-n;
+		return (0);
 	}
-	if (un >= 10)
-		ft_putnbr_fd(un / 10, fd);
-	ft_putchar_fd((char)(un % 10 + '0'), fd);
+	i = 0;
+	max = arr[i];
+	while (++i < size)
+		if (arr[i] > max)
+			max = arr[i];
+	return (max);
 }
