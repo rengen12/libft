@@ -6,17 +6,17 @@
 /*   By: amichak <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/26 14:08:33 by amichak           #+#    #+#             */
-/*   Updated: 2017/10/26 14:08:35 by amichak          ###   ########.fr       */
+/*   Updated: 2017/12/28 17:36:30 by amichak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *nptr)
+ssize_t		ft_atoi(const char *nptr)
 {
-	int				i;
-	int				sign;
-	unsigned long	r;
+	int		i;
+	int		sign;
+	ssize_t	r;
 
 	i = 0;
 	r = 0;
@@ -35,5 +35,5 @@ int		ft_atoi(const char *nptr)
 		return (0);
 	if (r > 9223372036854775807)
 		return (-1);
-	return ((int)r * sign);
+	return (r * sign);
 }
