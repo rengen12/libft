@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amichak <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/26 14:56:40 by amichak           #+#    #+#             */
-/*   Updated: 2017/10/26 14:56:43 by amichak          ###   ########.fr       */
+/*   Created: 2017/10/30 15:30:05 by amichak           #+#    #+#             */
+/*   Updated: 2017/10/30 15:30:07 by amichak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "handle_printf.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+void	ft_memdel(void **ap)
 {
-	if (!s)
-		return ;
-	while (*s)
-		write(fd, s++, 1);
-	write(fd, "\n", 1);
+	if (ap)
+	{
+		if (*ap)
+			free(*ap);
+		*ap = NULL;
+	}
 }

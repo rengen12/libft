@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amichak <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/30 15:29:00 by amichak           #+#    #+#             */
-/*   Updated: 2017/10/30 15:29:06 by amichak          ###   ########.fr       */
+/*   Created: 2017/10/26 14:56:40 by amichak           #+#    #+#             */
+/*   Updated: 2017/10/26 14:56:43 by amichak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+void	ft_putendl_fd(char const *s, int fd)
 {
-	if (alst && new)
-	{
-		new->next = *alst;
-		*alst = new;
-	}
+	if (!s)
+		return ;
+	write(fd, s, ft_strlen(s));
+	write(fd, "\n", 1);
 }
