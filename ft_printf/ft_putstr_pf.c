@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_pf.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amichak <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/26 15:33:51 by amichak           #+#    #+#             */
-/*   Updated: 2017/10/26 15:34:40 by amichak          ###   ########.fr       */
+/*   Created: 2017/10/25 20:59:23 by amichak           #+#    #+#             */
+/*   Updated: 2017/10/25 21:02:21 by amichak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, const char *src)
-{
-	int		i;
+#include "handle_printf.h"
 
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+size_t	ft_putstr_pf(char const *s, t_fs *fs)
+{
+	size_t	i;
+
+	if (!s)
+		return (0);
+	i = ft_strlen_printf(s);
+	if (fs)
+		if (fs->prec_exist && (size_t)fs->prec < i && fs->ch == 's')
+			i = fs->prec;
+	write(1, s, i);
+	return (i);
 }

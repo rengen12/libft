@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amichak <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/25 20:59:23 by amichak           #+#    #+#             */
-/*   Updated: 2017/10/25 21:02:21 by amichak          ###   ########.fr       */
+/*   Created: 2018/01/24 14:48:00 by amichak           #+#    #+#             */
+/*   Updated: 2018/01/24 14:48:00 by amichak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "handle_printf.h"
+#include "../libft.h"
 
-size_t	ft_putstr(char const *s, t_fs *fs)
+char	*ft_realloc(char *str, size_t sz)
 {
-	size_t	i;
+	char	*tmp;
+	size_t	n;
 
-	if (!s)
-		return (0);
-	i = ft_strlen_printf(s);
-	if (fs)
-		if (fs->prec_exist && (size_t)fs->prec < i && fs->ch == 's')
-			i = fs->prec;
-	write(1, s, i);
-	return (i);
+	if (!str)
+		return (NULL);
+	n = ft_strlen(str);
+	if (!(tmp = ft_strnew(n + sz)))
+		return (NULL);
+	ft_memmove(tmp, str, n);
+	ft_strdel(&str);
+	return (tmp);
 }

@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_puterr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amichak <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/25 20:57:52 by amichak           #+#    #+#             */
-/*   Updated: 2017/10/25 20:59:11 by amichak          ###   ########.fr       */
+/*   Created: 2018/01/24 13:59:00 by amichak           #+#    #+#             */
+/*   Updated: 2018/01/24 13:59:00 by amichak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "handle_printf.h"
+#include "../libft.h"
 
-size_t	ft_putchar(char c)
+void	ft_puterr(char *message)
 {
-	write(1, &c, 1);
-	return (1);
+	ft_putendl_fd(message, 2);
 }

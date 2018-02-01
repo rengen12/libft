@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_pf.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amichak <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/26 15:33:51 by amichak           #+#    #+#             */
-/*   Updated: 2017/10/26 15:34:40 by amichak          ###   ########.fr       */
+/*   Created: 2017/10/25 20:57:52 by amichak           #+#    #+#             */
+/*   Updated: 2017/10/25 20:59:11 by amichak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, const char *src)
-{
-	int		i;
+#include "handle_printf.h"
 
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+size_t	ft_putchar_pf(char c)
+{
+	write(1, &c, 1);
+	return (1);
 }
