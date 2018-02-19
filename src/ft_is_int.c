@@ -1,35 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   concat_strs.c                                      :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amichak <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/19 17:07:17 by amichak           #+#    #+#             */
-/*   Updated: 2018/02/19 17:07:20 by amichak          ###   ########.fr       */
+/*   Created: 2017/10/26 14:08:33 by amichak           #+#    #+#             */
+/*   Updated: 2017/12/28 17:36:30 by amichak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-char	*concat_strs(char *str, ...)
+int		ft_is_int(ssize_t num)
 {
-	va_list	ap;
-	char	*res;
-
-	res = NULL;
-	if (str)
-	{
-		va_start(ap, str);
-		if (!(res = ft_strnew(ft_strlen(str))))
-			return (NULL);
-		ft_strcpy(res, str);
-		while ((str = va_arg(ap, char *)))
-		{
-			res = ft_realloc(res, ft_strlen(str));
-			ft_strcat(res, str);
-		}
-		va_end(ap);
-	}
-	return (res);
+	if (num <= 2147483647 && num >= -2147483648)
+		return (1);
+	return (0);
 }

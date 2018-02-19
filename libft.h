@@ -18,7 +18,7 @@
 # include <fcntl.h>
 # include <stdarg.h>
 
-# define BUFF_SIZE 12
+# define BUFF_SIZE 20
 
 typedef struct	s_list
 {
@@ -68,6 +68,7 @@ int				ft_strnequ(const char *s1, const char *s2, size_t n);
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strjoin_fr_frst(char *s1, char const *s2);
+char			*ft_strjoin_fr_two(char *s1, char *s2);
 char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
 char			*ft_itoa(int n);
@@ -106,5 +107,6 @@ int				ft_printf(const char *format, ...);
 void			ft_puterr(char *message);
 char			*ft_realloc(char *str, size_t sz);
 char			*concat_strs(char *str, ...);
-
+int				ft_issptab(int c);
+int				ft_is_int(ssize_t num);
 #endif

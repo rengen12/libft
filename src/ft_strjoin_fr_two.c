@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   concat_strs.c                                      :+:      :+:    :+:   */
+/*   ft_strjoin_fr_two.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amichak <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/19 17:07:17 by amichak           #+#    #+#             */
-/*   Updated: 2018/02/19 17:07:20 by amichak          ###   ########.fr       */
+/*   Created: 2017/10/30 15:37:28 by amichak           #+#    #+#             */
+/*   Updated: 2017/10/30 15:37:30 by amichak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-char	*concat_strs(char *str, ...)
+char	*ft_strjoin_fr_two(char *s1, char *s2)
 {
-	va_list	ap;
-	char	*res;
+	char	*r;
 
-	res = NULL;
-	if (str)
-	{
-		va_start(ap, str);
-		if (!(res = ft_strnew(ft_strlen(str))))
-			return (NULL);
-		ft_strcpy(res, str);
-		while ((str = va_arg(ap, char *)))
-		{
-			res = ft_realloc(res, ft_strlen(str));
-			ft_strcat(res, str);
-		}
-		va_end(ap);
-	}
-	return (res);
+	if (!s1 || !s2)
+		return (NULL);
+	if (!(r = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
+		return (NULL);
+	ft_strcpy(r, s1);
+	ft_strcat(r, s2);
+	free(s1);
+	free(s2);
+	return (r);
 }

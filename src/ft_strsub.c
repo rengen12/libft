@@ -17,10 +17,10 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	char	*r;
 	size_t	i;
 
-	if (!(r = ft_strnew(len)) || !s)
+	if (!s || !(r = ft_strnew(len)))
 		return (NULL);
 	i = 0;
-	while (len--)
+	while (len-- && s[start])
 		r[i++] = s[start++];
 	r[i] = '\0';
 	return (r);
