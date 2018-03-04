@@ -109,4 +109,6 @@ char			*ft_realloc(char *str, size_t sz);
 char			*concat_strs(char *str, ...);
 int				ft_issptab(int c);
 int				ft_is_int(ssize_t num);
+void			ft_putnstr(char *str, size_t n);
+void			ft_putnendl(char *str, size_t n);
 #endif
