@@ -104,12 +104,13 @@ int				*ft_arrnew(int len);
 void			ft_putarr(int *arr, int len, char separator);
 int				get_next_line(const int fd, char **line);
 int				ft_printf(const char *format, ...);
-void			ft_puterr(char *message);
-void			ft_puterrendl(char *message);
+int				ft_puterr(char *message);
+int				ft_puterrendl(char *message);
 char			*ft_realloc(char *str, size_t sz);
 char			*concat_strs(char *str, ...);
 int				ft_issptab(int c);
 int				ft_is_int(ssize_t num);
+int				ft_is_shint(ssize_t num);
 void			ft_putnstr(char *str, size_t n);
 void			ft_putnendl(char *str, size_t n);
 #endif

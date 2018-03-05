@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puterr.c                                        :+:      :+:    :+:   */
+/*   ft_is_shint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amichak <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/24 13:59:00 by amichak           #+#    #+#             */
-/*   Updated: 2018/01/24 13:59:00 by amichak          ###   ########.fr       */
+/*   Created: 2017/10/26 14:08:33 by amichak           #+#    #+#             */
+/*   Updated: 2017/12/28 17:36:30 by amichak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int		ft_puterr(char *message)
+int		ft_is_shint(ssize_t num)
 {
-	ft_putstr_fd(message, 2);
-	return (1);
+	if (num <= 32767 && num >= -32768)
+		return (1);
+	return (0);
 }

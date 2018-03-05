@@ -12,7 +12,8 @@
 
 #include "../libft.h"
 
-void	ft_puterrendl(char *message)
+int		ft_puterrendl(char *message)
 {
 	ft_putendl_fd(message, 2);
+	return (1);
 }
