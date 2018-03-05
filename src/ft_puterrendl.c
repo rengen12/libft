@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puterr.c                                        :+:      :+:    :+:   */
+/*   ft_puterrendl.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amichak <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/24 13:59:00 by amichak           #+#    #+#             */
-/*   Updated: 2018/01/24 13:59:00 by amichak          ###   ########.fr       */
+/*   Created: 2018/03/05 12:22:00 by amichak           #+#    #+#             */
+/*   Updated: 2018/03/05 12:22:00 by amichak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_puterr(char *message)
+void	ft_puterrendl(char *message)
 {
-	ft_putstr_fd(message, 2);
+	ft_putendl_fd(message, 2);
 }
