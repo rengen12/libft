@@ -23,7 +23,7 @@ SRC = ft_printf.c chars.c ft_convert_base_printf.c ft_putchar_pf.c \
 	  ft_strchr.c ft_atoi_printf.c colors.c ft_strcmp_pf.c handlers.c \
 	  padding.c print_chars.c print_num.c redirect_print.c print_float.c
 
-OBJ = $(addprefix $(OBJFOLD),$(patsubst %.c, %.o, $(SRC)))
+OBJ = $(addprefix $(OBJFOLD),$(patsubst %.c, %.o, $(wildcard $(SRC))))
 
 all:				$(NAME)
 
