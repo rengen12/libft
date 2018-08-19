@@ -37,7 +37,8 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	  ft_div_mod.c ft_srch_arrelem.c ft_arrrev.c ft_arrnew.c ft_putarr.c \
 	  get_next_line.c ft_realloc.c ft_puterr.c ft_puterrendl.c concat_strs.c \
 	  ft_issptab.c ft_is_int.c ft_is_shint.c ft_is_pint.c ft_is_pshint.c \
-	  ft_strjoin_fr_two.c ft_putnstr.c ft_putnendl.c ft_is_alldigits.c
+	  ft_strjoin_fr_two.c ft_putnstr.c ft_putnendl.c ft_is_alldigits.c \
+	  ft_putstr_mult_fd.c
 
 OBJ = $(addprefix $(OBJFOLD),$(patsubst %.c, %.o, $(SRC)))
 PRINTFOBJ = ./ft_printf/obj/*.o

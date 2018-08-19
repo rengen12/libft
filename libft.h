@@ -116,4 +116,5 @@ int				ft_is_pshint(ssize_t num);
 void			ft_putnstr(char *str, size_t n);
 void			ft_putnendl(char *str, size_t n);
 int				ft_is_alldigits(char *str);
+int				ft_putstr_mult_fd(int fd, int count, ...);
 #endif
